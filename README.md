@@ -7,13 +7,13 @@ The event-triggered dynamics discussed on 19/11/25 were written in agent form as
 $$
 \dot{x}_i
 = -\nabla f_i(x_i)
-  - \sum_{j} a_{ij}(\hat{x}_i - \hat{x}_j)
-  - \sum_{j} a_{ij}(\hat{z}_i - \hat{z}_j),
+  - \sum_j a_{ij}(\hat{x}_i - \hat{x}_j)
+  - \sum_j a_{ij}(\hat{z}_i - \hat{z}_j),
 $$
 
 $$
 \dot{z}_i
-= \sum_{j} a_{ij}(\hat{z}_i - \hat{z}_j).
+= \sum_j a_{ij}(\hat{z}_i - \hat{z}_j).
 $$
 
 In compact Laplacian form, these were expressed as:
