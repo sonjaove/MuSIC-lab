@@ -16,6 +16,7 @@ $$
 = \sum_j a_{ij}(\hat{z}_i - \hat{z}_j).
 $$
 
+
 In compact Laplacian form, these were expressed as:
 
 $$
