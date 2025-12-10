@@ -6,7 +6,7 @@ The event-triggered dynamics discussed on 19/11/25 were written in agent form as
 
 $$
 \begin{cases}
-\dot{x} = -\nabla f - Lx - Lz - L(\hat{x}-x) - L(\hat{z}-z),\\[6pt]
+\dot{x} = -\nabla f - Lx - Lz - L(\hat{x}-x) - L(\hat{z}-z),\\
 \dot{z} = Lz + L(\hat{z}-z)
 \end{cases}
 $$
@@ -55,7 +55,7 @@ The corrected form is:
 
 $$
 \begin{cases}
-\dot{x} = -\nabla f - Lx - Lz - L e_x - L e_z, \\[6pt]
+\dot{x} = -\nabla f - Lx - Lz - L e_x - L e_z, \\
 \dot{z} = Lx + L e_x
 \end{cases}
 $$
