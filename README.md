@@ -47,7 +47,7 @@ These are the equations exactly as written on the board on 19/11/25.
 
 
 
-## Correction in Equations
+## Correction in Equations (10/12/25)
 
 It was later identified that the expression for $\dot{z}$ was incorrect for the intended purpose.
 
@@ -72,4 +72,11 @@ This correction restores the intended convergence behaviour.
 1. ![pairwise dis](pairwise_disagreement.png)
 2. ![trajectroies](<trejactories and component-wise convergence.png>)
 - the only caveat is that the there is some oscillation when agents converge
+
+## recent advancments in this field :
+> google search: "recent advancements in the field of Distributed convex optimization via continuous-time coordination algorithms with discrete-time communication"
+1. using PI controller instead of event-triggered contorl.
+2. subgradient methods
+3. [Distributed Predefined-time Zero-gradient-sum Optimization for Multi-agent Systems: From Continuous-time to Event-triggered Communication (recent most 2025)](https://link.springer.com/article/10.1007/s12555-023-0140-1)
+
 
