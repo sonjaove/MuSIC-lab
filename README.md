@@ -67,11 +67,6 @@ Here:
 - the system now structurally matches the role of $v$ in the original algorithm.
 
 This correction restores the intended convergence behaviour.
-- $z$ now behaves as an **integrator of disagreement in $x$**,  
-- the term $-z$ in $\dot{x}$ provides the required **integral correction**,  
-- the system now structurally matches the role of $v$ in the original algorithm.
-
-This correction restores the intended convergence behaviour.
 
 ## Results
 1. ![pairwise dis](pairwise_disagreement.png)
