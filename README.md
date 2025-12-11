@@ -14,7 +14,7 @@ $$
 $$
 \Rightarrow\quad
 \begin{cases}
-\dot{x} = -\nabla f - Lx - Lz - L e_x - L e_z,\\[6pt]
+\dot{x} = -\nabla f - Lx - Lz - L e_x - L e_z,\\
 \dot{z} = Lz + L e_z
 \end{cases}
 $$
@@ -53,12 +53,13 @@ It was later identified that the expression for $\dot{z}$ was incorrect for the 
 
 The corrected form is:
 
-$$
+$$\quad
 \begin{cases}
-\dot{x} = -\nabla f - Lx - Lz - L e_x - L e_z, \\
+\dot{x} = -\nabla f - Lx - Lz - L e_x - L e_z,\\
 \dot{z} = Lx + L e_x
 \end{cases}
 $$
+
 Here:
 
 - $z$ now behaves as an **integrator of disagreement in $x$**,  
