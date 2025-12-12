@@ -51,7 +51,7 @@ These are the equations exactly as written on the board on 19/11/25.
 
 It was later identified that the expression for $\dot{z}$ was incorrect for the intended purpose.
 
-The corrected form is:
+The corrected form is [(has already been studied)](https://arxiv.org/abs/1407.7921) :
 
 $$\quad
 \begin{cases}
@@ -78,5 +78,3 @@ This correction restores the intended convergence behaviour.
 1. using PI controller instead of event-triggered contorl.
 2. subgradient methods
 3. [Distributed Predefined-time Zero-gradient-sum Optimization for Multi-agent Systems: From Continuous-time to Event-triggered Communication (recent most 2025)](https://link.springer.com/article/10.1007/s12555-023-0140-1)
-
-
