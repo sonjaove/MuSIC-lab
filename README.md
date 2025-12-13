@@ -52,6 +52,7 @@ These are the equations exactly as written on the board on 19/11/25.
 It was later identified that the expression for $\dot{z}$ was incorrect for the intended purpose.
 
 The corrected form is [(has already been studied but not in terms of optimization in this paper)](https://arxiv.org/abs/1407.7921) :
+
 $$\quad
 \begin{cases}
 \dot{x} = -\nabla f - Lx - Lz - L e_x - L e_z,\\
