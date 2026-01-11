@@ -14,9 +14,9 @@ neighbors = cell(N,1);
 for i = 1:N, neighbors{i} = find(A(i,:) == 1); end
 
 % Initial states (same as before)
-x = [  2   2;
-       3  -5;
-      -4   1 ];   % N x 2
+x = [  20   2;
+       3  -15;
+      -14   10 ];   % N x 2
 z = zeros(N,2);
 
 % Sampled / last-broadcast values (start equal to initial)
