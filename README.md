@@ -72,12 +72,34 @@ This correction restores the intended convergence behaviour.
 1. ![pairwise dis](pairwise_disagreement.png)
 2. ![trajectroies](<trejactories and component-wise convergence.png>)
 - the only caveat is that the there is some oscillation when agents converge
+- number of broadcasts and time of convergence for this system trinagular ring):
+  - Triggers for z broadcasts per agent:
+      - Agent 1: 81
+      - Agent 2: 74
+      - Agent 3: 46
+      - Time of convergence: 14.220 s
 
 ## Progress in the project till now
 1. studied the form given by [Cortes](https://arxiv.org/abs/1204.0304) and [S.S Kia](https://www.sciencedirect.com/science/article/abs/pii/S0005109815001053?fr=RR-2&ref=pdf_download&rr=9b481ad5db148af9)
 2. tried to prove S.S Kia's form in a way similar to Cortes, but cannot yet make a definitive comment about the rates as that requires a nice lypunov candidate, and im haveing trouble comming up wiht one, currently the work i did is under correction by the supervisor and phds.
 3. the hypothesis is that the form by kia is garuneented to converge faster than cortes even when event triggered communication is not used, need to prove/disprove it.
 4. need to do a same comparitive study for our form, also need to define $e_z$
+## simulating the 2014 and 2015 systems on this system to see thier time of convergences:
+1. for 2014 system (cortes) :
+  - number of broadcasts and time of convergence for this system trinagular ring):
+      - Triggers for z broadcasts per agent:
+          - Agent 1: 20
+          - Agent 2: 15
+          - Agent 3: 17
+          - Time of convergence: 6.070 s
+2. for the 2015 system (S.S Kia and corets):
+  - number of broadcasts and time of convergence for this system trinagular ring):
+      - Triggers for z broadcasts per agent:
+          - Agent 1: 13
+          - Agent 2: 10
+          - Agent 3: 12
+          - Time of convergence: 8.480 s
+
 
 ## recent advancments in this field :
 > google search: "recent advancements in the field of Distributed convex optimization via continuous-time coordination algorithms with discrete-time communication"
