@@ -5,7 +5,10 @@ clc; clear; close all;
 N = 3; d = 2;
 T_final = 100; dt = 0.01;
 tvec = 0:dt:T_final; steps = numel(tvec);
-sigma = 0.05;                % event-trigger parameter (tune)
+sigma = 0.05;     % event-trigger parameter (tune)
+eps_conv = 1e-2;
+t_conv = NaN;
+
 
 % Graph (triangular ring)
 A = [0 1 1; 1 0 1; 1 1 0];
@@ -80,10 +83,10 @@ for k = 1:steps
         g = local_grad(i, x(i,:));   
         
         % x_dot = -grad - Lx_i - Lz_i - L(x̂-x)_i - L(ẑ-z)_i
-        x_dot(i,:) = -1 * g - Lx(i,:) - Lz(i,:) - 1*Le_x(i,:) - 1*Le_z(i,:);
+        x_dot(i,:) = -1 * g - Lx(i,:) - z(i,:) - 0*Le_x(i,:) - 0*Le_z(i,:);
         
         % z_dot = Lz_i + L(ẑ - z)_i
-        z_dot(i,:) = Lx(i,:) + 1*Le_x(i,:);
+        z_dot(i,:) = Lx(i,:) + 0*Le_x(i,:);
     end
     
     % Event-trigger checks for x and z (decentralized)
@@ -119,6 +122,18 @@ for k = 1:steps
     % Euler update
     x = x + dt * x_dot;
     z = z + dt * z_dot;
+    % ---- convergence metric ----
+    dmax = 0;
+    for i = 1:N
+        for j = i+1:N
+            dmax = max(dmax, norm(x(i,:) - x(j,:)));
+        end
+    end
+    
+    if isnan(t_conv) && dmax < eps_conv
+        t_conv = t;
+    end
+
 end
 
 %% Pairwise disagreement plot: ||x_i - x_j||
@@ -157,6 +172,8 @@ fprintf('\nTriggers for x broadcasts per agent:\n');
 for i = 1:N, fprintf('Agent %d: %d\n', i, trigger_count_x(i)); end
 fprintf('\nTriggers for z broadcasts per agent:\n');
 for i = 1:N, fprintf('Agent %d: %d\n', i, trigger_count_z(i)); end
+fprintf('Time of convergence: %.3f s\n', t_conv);
+
 function g = local_grad(node, v)
     x1 = v(1); x2 = v(2);
     switch node
