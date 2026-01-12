@@ -135,3 +135,53 @@ function g = local_grad(node, v)
             g = [0,0];
     end
 end
+% --------------------------------------------------------------------------------------------------------
+
+% plot functions 
+
+function plot_pairwise_disagreement(X_hist,tvec,pairs)
+
+figure; hold on;
+for p = 1:size(pairs,1)
+    i = pairs(p,1); j = pairs(p,2);
+    diff_ij = squeeze(X_hist(i,:,:) - X_hist(j,:,:));
+    d_ij = vecnorm(diff_ij);
+    plot(tvec,d_ij,'LineWidth',1.4);
+end
+xlabel('Time'); ylabel('||x_i-x_j||');
+legend('1-2','2-3','1-3','Location','best');
+grid on; hold off;
+end
+
+function plot_components(X_hist,tvec)
+
+N = size(X_hist,1);
+figure;
+subplot(2,1,1); hold on;
+for i=1:N, plot(tvec,squeeze(X_hist(i,1,:))); end
+ylabel('x_1'); grid on;
+
+subplot(2,1,2); hold on;
+for i=1:N, plot(tvec,squeeze(X_hist(i,2,:))); end
+xlabel('Time'); ylabel('x_2'); grid on;
+end
+function plot_trajectories_2D(X_hist)
+
+N = size(X_hist,1); colors = lines(N);
+figure; hold on;
+for i=1:N
+    plot(squeeze(X_hist(i,1,:)),squeeze(X_hist(i,2,:)),'Color',colors(i,:));
+    plot(X_hist(i,1,1),X_hist(i,2,1),'s','MarkerFaceColor',colors(i,:));
+    plot(X_hist(i,1,end),X_hist(i,2,end),'d','MarkerFaceColor',colors(i,:));
+end
+axis equal; grid on;
+xlabel('x_1'); ylabel('x_2');
+hold off;
+end
+function print_triggers(tx,tz)
+
+fprintf('\nTriggers for x:\n');
+fprintf('Agent %d: %d\n',[1:numel(tx); tx]);
+fprintf('\nTriggers for z:\n');
+fprintf('Agent %d: %d\n',[1:numel(tz); tz]);
+end
