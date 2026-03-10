@@ -68,7 +68,7 @@ Here:
 
 This correction restores the intended convergence behaviour.
 
-## Results
+## Results for the above dynamics
 1. ![pairwise dis](pairwise_disagreement.png)
 2. ![trajectroies](<trejactories and component-wise convergence.png>)
 - the only caveat is that the there is some oscillation when agents converge
@@ -79,12 +79,7 @@ This correction restores the intended convergence behaviour.
       - Agent 3: 46
       - Time of convergence: 14.220 s
 
-## Progress in the project till now
-1. studied the form given by [Cortes](https://arxiv.org/abs/1204.0304) and [S.S Kia](https://www.sciencedirect.com/science/article/abs/pii/S0005109815001053?fr=RR-2&ref=pdf_download&rr=9b481ad5db148af9)
-2. tried to prove S.S Kia's form in a way similar to Cortes, but cannot yet make a definitive comment about the rates as that requires a nice lypunov candidate, and im haveing trouble comming up wiht one, currently the work i did is under correction by the supervisor and phds.
-3. the hypothesis is that the form by kia is garuneented to converge faster than cortes even when event triggered communication is not used, need to prove/disprove it.
-4. need to do a same comparitive study for our form, also need to define $e_z$
-## simulating the 2014 and 2015 systems on this system to see thier time of convergences:
+## Simulation of  the 2014 and 2015 systems to see thier time of convergences:
 1. for 2014 system (cortes) :
   - number of broadcasts and time of convergence for this system trinagular ring):
       - Triggers for z broadcasts per agent:
@@ -99,10 +94,20 @@ This correction restores the intended convergence behaviour.
           - Agent 2: 10
           - Agent 3: 12
           - Time of convergence: 8.480 s
+> code for both the simulations in this repositroy
+## Progress in the project till now
+1. studied the form given by [Cortes](https://arxiv.org/abs/1204.0304) and [S.S Kia](https://www.sciencedirect.com/science/article/abs/pii/S0005109815001053?fr=RR-2&ref=pdf_download&rr=9b481ad5db148af9)
+2. tried to prove S.S Kia's form in a way similar to Cortes, but cannot yet make a definitive comment about the rates as that requires a nice lypunov candidate, and im haveing trouble comming up wiht one, currently the work i did is under correction by the supervisor and phds.
+3. the hypothesis is that the form by kia is garuneented to converge faster than cortes even when event triggered communication is not used, need to prove/disprove it.
+4. need to do a same comparitive study for our form, also need to define $e_z$
 
+## Sem 6 proj progress:
+1. found the conditions on the constant for [S.S Kia](https://www.sciencedirect.com/science/article/abs/pii/S0005109815001053?fr=RR-2&ref=pdf_download&rr=9b481ad5db148af9) using [W.Ren 2006](https://onlinelibrary.wiley.com/doi/abs/10.1002/rnc.1147) as the matrix turned out the be very similar, which concludes the comeparitive study as we simulated the event triggered communication for [Cortes](https://arxiv.org/abs/1204.0304) (explicit proof not needed)
+2. Changing the direction of the project to work on adaptive gains for the [S.S Kia](https://www.sciencedirect.com/science/article/abs/pii/S0005109815001053?fr=RR-2&ref=pdf_download&rr=9b481ad5db148af9) type algotrihtm, trying to establish its convergence and seeing whether or not its feasible under event-triggered communication. A similar study is already done in MuSIC lab recently [(here)](https://ieeexplore.ieee.org/abstract/document/11372418)
 
 ## recent advancments in this field :
-> google search: "recent advancements in the field of Distributed convex optimization via continuous-time coordination algorithms with discrete-time communication"
+<!-- > google search: "recent advancements in the field of Distributed convex optimization via continuous-time coordination algorithms with discrete-time communication" -->
 1. using PI controller instead of event-triggered contorl (the integral control essentially).
 2. subgradient methods
 3. [Distributed Predefined-time Zero-gradient-sum Optimization for Multi-agent Systems: From Continuous-time to Event-triggered Communication (recent most 2025)](https://link.springer.com/article/10.1007/s12555-023-0140-1)
+4. [recent most study related to this from MuSIC lab](https://ieeexplore.ieee.org/abstract/document/11372418)
