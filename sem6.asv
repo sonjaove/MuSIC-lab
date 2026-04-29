@@ -18,10 +18,10 @@ A =  [0 1 0 1;
 L = diag(sum(A,2)) - A;
 
 %% Initial states
-x = k * [ 7   -3;
-     -4    8;
-     -6   -5;
-      3    0];
+x = k * x = [ 10    10;
+     -9     -9;
+     -1      2;
+      0     -3];
 
 v     = zeros(N,2);
 alpha = zeros(N,1);
