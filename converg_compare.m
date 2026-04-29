@@ -18,7 +18,11 @@ neighbors = cell(N,1);
 for i = 1:N, neighbors{i} = find(A(i,:) == 1); end
 
 % Initial states
-x = [20 2; 3 -15; -14 10];
+k=5
+x = k* [ 1   2;
+     -2   1;
+      3  -4;
+     -2   1];
 z = zeros(N,2);
 x_last = x;
 z_last = z;
@@ -56,7 +60,7 @@ trigger_count_z = out.trigger_count_z;
 
 %% Plots
 % Pairwise disagreement
-plot_pairwise_disagreement(X_hist, tvec, [1 2; 2 3; 1 3]);
+plot_pairwise_disagreement(X_hist, tvec, [1 2; 2 3; 3 4; 4 1; 1 3; 2 4]);
 
 % Component-wise time plots
 plot_components(X_hist, tvec);
