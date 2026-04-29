@@ -18,7 +18,7 @@ neighbors = cell(N,1);
 for i = 1:N, neighbors{i} = find(A(i,:) == 1); end
 
 % Initial states
-k=5
+k=10
 x = k* [ 1   2;
      -2   1;
       3  -4;
